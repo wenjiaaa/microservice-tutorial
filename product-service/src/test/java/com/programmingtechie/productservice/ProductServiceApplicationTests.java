@@ -53,7 +53,7 @@ class ProductServiceApplicationTests {
 	}
 
 	@Test
-	void shoulGetAllProducts() throws Exception{
+	void shouldGetAllProducts() throws Exception{
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/product")
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
