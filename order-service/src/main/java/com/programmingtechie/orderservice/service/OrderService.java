@@ -5,6 +5,7 @@ import com.programmingtechie.orderservice.dto.OrderRequest;
 import com.programmingtechie.orderservice.model.Order;
 import com.programmingtechie.orderservice.model.OrderLineItems;
 import com.programmingtechie.orderservice.repository.OrderRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.weaver.ast.Or;
@@ -16,6 +17,8 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+// @Transactional表示数据库操作的事务行为，确保一组相关的数据库操作作为一个原子单元处理，要么全部成功提交，要么全部回滚。
+@Transactional
 public class OrderService {
 
     private final OrderRepository orderRepository;
